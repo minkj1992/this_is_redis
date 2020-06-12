@@ -2,6 +2,9 @@
 > [redisgate](http://redisgate.kr/redis/education/docker_intro.php)
 
 
+
+## redis 설치
+
 도커 update
 
 ```bash
@@ -24,3 +27,7 @@ redis-cli run with generated redis container
 ```bash
 docker run -it --link myredis:redis --rm redis redis-cli -h redis -p 6379
 ```
+
+## -d 옵션으로 돌고있는 redis 서버에 접속하기
+
+    docker exec -it myredis /bin/bash
