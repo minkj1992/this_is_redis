@@ -47,6 +47,39 @@ redis:6379> get login:counter
 "3"
 ```
 
+string을 정수로 파싱하고, 이를 atomic하게 증감하는 커맨드
+
+```bash
+> set counter 100
+OK
+> incr counter
+(integer) 101
+> incr counter
+(integer) 102
+> incrby counter 50
+(integer) 152
+```
+
+키를 새 값으로 변경하고 이전 값을 반환하는 커맨드
+
+```bash
+> INCR mycounter
+(integer) 1
+> GETSET mycounter "0"
+"1"
+redis> GET mycounter
+"0"
+```
+
+키가 이미 존재하거나, 존재하지 않을 때에만 데이터를 저장하게 하는 옵션
+
+```bash
+> set mykey newval nx
+(nil)
+> set mykey newval xx
+OK
+```
+
 ## List 명령어
 
 - `lpush`

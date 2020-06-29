@@ -1,0 +1,1 @@
+> http://redisgate.jp/redis/configuration/param_appendonly.php
